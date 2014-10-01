@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001052632) do
+ActiveRecord::Schema.define(version: 20141001063133) do
 
   create_table "cases", force: true do |t|
     t.datetime "created_at"
@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 20141001052632) do
     t.string   "last_name"
     t.string   "sex"
     t.integer  "age"
-    t.integer  "household"
     t.string   "language"
     t.text     "medication"
     t.text     "conditions"
