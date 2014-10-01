@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001063133) do
+ActiveRecord::Schema.define(version: 20141001064044) do
 
   create_table "cases", force: true do |t|
     t.datetime "created_at"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20141001063133) do
     t.integer  "urgency_level"
     t.string   "status"
     t.text     "notes"
+    t.integer  "patient_id"
   end
+
+  add_index "cases", ["patient_id"], name: "index_cases_on_patient_id"
 
   create_table "clinicians", force: true do |t|
     t.datetime "created_at"
@@ -51,7 +54,10 @@ ActiveRecord::Schema.define(version: 20141001063133) do
     t.string   "name"
     t.string   "province"
     t.string   "country"
+    t.integer  "household_id"
   end
+
+  add_index "locations", ["household_id"], name: "index_locations_on_household_id"
 
   create_table "patients", force: true do |t|
     t.datetime "created_at"
@@ -64,7 +70,10 @@ ActiveRecord::Schema.define(version: 20141001063133) do
     t.string   "language"
     t.text     "medication"
     t.text     "conditions"
+    t.integer  "household_id"
   end
+
+  add_index "patients", ["household_id"], name: "index_patients_on_household_id"
 
   create_table "syndromes", force: true do |t|
     t.datetime "created_at"
