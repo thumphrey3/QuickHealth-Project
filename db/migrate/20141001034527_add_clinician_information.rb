@@ -9,7 +9,9 @@ class AddClinicianInformation < ActiveRecord::Migration
       t.integer :age
       t.string :role
       t.string :organization
-      t.
+      t.string :email
+      t.string :mobile_number
+      t.string :location
   	end
 
   end
