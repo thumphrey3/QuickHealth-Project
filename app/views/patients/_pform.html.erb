@@ -3,8 +3,8 @@
   <%= f.input :first_name, label: 'First Name', placeholder: 'First Name' %>
   <%= f.input :last_name, label: 'Last Name', placeholder: 'Last Name' %>
   <%= f.input :sex, as: :radio_buttons, collection: ['Male', 'Female'] %> 
-  <%= f.input :age, collection: 0..60  %>
-  <%= f.association :household %>
+  <%= f.input :age, collection: 0..120  %>
+  <%= f.association :household, :label_method => :name, :value_method => :id %>
   <%= f.input :language %>
   <%= f.input :medication %>
   <%= f.input :conditions %>

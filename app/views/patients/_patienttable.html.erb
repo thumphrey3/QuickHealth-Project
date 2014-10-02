@@ -15,6 +15,7 @@
 	</thead>
 
 	<% @patients.each do |patient| %>
+
 	<tbody>
 		<tr>
 			<td><%= 'Image Placeholder' %></td> 
@@ -22,7 +23,7 @@
 			<td><%= patient.last_name %></td>
 			<td><%= patient.sex %></td> 
 			<td><%= patient.age %></td> 
-			<td><%= link_to patient.household %></td> 
+			<td><%= patient.household.name %></td>
 			<td><%= patient.language %></td>
 			<td><%= patient.medication %></td>
 			<td><%= patient.conditions %></td>

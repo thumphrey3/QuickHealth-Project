@@ -20,7 +20,7 @@ class HouseholdsController < ApplicationController
 
 	def create
 		@household = Household.new household_params
-    	if @patient.save
+    	if @household.save
       		redirect_to @household, notice: "Household was saved."
     	else
       		render 'new'
@@ -37,13 +37,13 @@ class HouseholdsController < ApplicationController
      	 	render 'edit'
     	end
 	end 
-	
+
 	private
 	def set_household
    		@household = Household.find params[:id]
 	end
 
 	def household_params
-		params.require(:household).permit(:name, :mobile_number, :location, :email)
+		params.require(:household).permit(:name, :mobile_number, :location)
 	end
 end
