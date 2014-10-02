@@ -1,0 +1,27 @@
+<h3>Household List</h3>
+<table class="table table-striped" id="Household_Table">
+	<thead>
+		<tr>
+			<td style="font-size: 20px"><strong>Name</strong></td>
+			<td style="font-size: 20px"><strong>Mobile Number</strong></td>
+			<td style="font-size: 20px"><strong>Email Address</strong></td>
+			<td style="font-size: 20px"><strong>Location</strong></td>
+			<td style="font-size: 20px"><strong>Household Members</strong></td>
+			<td style="font-size: 20px"><strong>Language</strong></td>
+		</tr>
+	</thead>
+
+	<% @households.each do |household| %>
+	
+	<tbody>
+		<tr>
+			<td><%= household.name %></td> 
+			<td><%= household.mobile_number %></td>
+			<td><%= household.email %></td> 
+			<td><%= household.location %></td> 
+			<td><%= 'Household Member Placeholder' %></td>
+			<td><%= 'Household Language' %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table> 

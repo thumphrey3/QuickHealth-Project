@@ -7,16 +7,20 @@
   <%= f.association :household %>
   <%= f.input :language %>
   <%= f.input :medication %>
-  <%= f.input :conditions, as: :check_boxes,
-    			collection: [
-      				'Allergies',
-      				'Malnutrition'] %>
+  <%= f.input :conditions %>
   <%= f.button :submit %>
 <% end %>
 
 
 
 
+<!-- Setting Up Check Boxes- 
+	Need to change conditions into an array- :conditions => []
+f.input :conditions, as: :check_boxes,
+    			collection: [
+      				'Allergies',
+      				'Crippled',
+      				'Other']  -->
 
 
 <!-- <form role="form">
