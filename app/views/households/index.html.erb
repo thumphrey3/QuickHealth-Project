@@ -1,8 +1,9 @@
 <h3><%= link_to "+ Register New Household", new_household_path %></h3>
 
 <%= form_tag households_path, method: "GET" do %>
-  <%= text_field_tag :q, params[:q] %>
+  <%= text_field_tag :search, params[:search] %>
   <%= submit_tag "Search" %>
 <% end %>
+ 
 
 <%= render 'householdtable' %>

@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: cases
+#
+#  id            :integer          not null, primary key
+#  created_at    :datetime
+#  updated_at    :datetime
+#  urgency_level :integer
+#  status        :string(255)
+#  notes         :text
+#  patient_id    :integer
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the

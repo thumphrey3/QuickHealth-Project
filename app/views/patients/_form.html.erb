@@ -4,10 +4,11 @@
   <%= f.input :last_name, label: 'Last Name', placeholder: 'Last Name' %>
   <%= f.input :sex, as: :radio_buttons, collection: ['Male', 'Female'] %> 
   <%= f.input :age, collection: 0..120  %>
+   <%= f.input :language, collection: language_list  %>
+
   <%= f.association :household, :label_method => :name, :value_method => :id %>
-  <%= f.input :language %>
   <%= f.input :medication %>
-  <%= f.input :conditions %>
+  <%= f.input :conditions, label: "Chronic Conditions" %>
   <%= f.button :submit %>
 <% end %>
 

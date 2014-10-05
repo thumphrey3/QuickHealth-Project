@@ -1,15 +1,15 @@
 class HouseholdsController < ApplicationController
 	before_action :set_household, only: [:update, :edit, :show]
 
-	def index
-		@households = Household.all
-		if params[:q]
-      		@household = Household.where("name LIKE ?", "%#{params[:q]}%").first
-      		render 'show'
-    	else
-      		@households = Household.all
-    	end
-	end
+  def index
+    @households = Household.all
+    if params[:search]
+      @household = Household.search(params[:search])
+      render 'show'
+    else 
+      @households = Household.all
+    end
+  end
 
 	def show
 	end
@@ -44,6 +44,6 @@ class HouseholdsController < ApplicationController
 	end
 
 	def household_params
-		params.require(:household).permit(:name, :mobile_number, :location)
+		params.require(:household).permit(:name, :mobile_number)
 	end
 end

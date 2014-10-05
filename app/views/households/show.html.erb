@@ -6,7 +6,6 @@
 			<td style="font-size: 20px"><strong>Name</strong></td>
 			<td style="font-size: 20px"><strong>Mobile Number</strong></td>
 			<td style="font-size: 20px"><strong>Email Address</strong></td>
-			<td style="font-size: 20px"><strong>Location</strong></td>
 			<td style="font-size: 20px"><strong>Household Members</strong></td>
 			<td style="font-size: 20px"><strong>Language</strong></td>
 		</tr>
@@ -17,8 +16,8 @@
 			<td><%= @household.name %></td> 
 			<td><%= @household.mobile_number %></td>
 			<td><%= @household.email %></td> 
-			<td><%= @household.location %></td> 
-			<td><%= 'Household Member Placeholder' %></td>
+			<% link = @household.patient_ids %>
+			<td><%= @household.patients.map{|wl| link_to wl.first_name, patient_path(link)}.join(', ').html_safe %></td>
 			<td><%= 'Household Language' %></td>
 		</tr>
 	</tbody>
