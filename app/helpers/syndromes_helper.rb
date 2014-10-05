@@ -1,0 +1,2 @@
+module SyndromesHelper
+end

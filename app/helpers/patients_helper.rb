@@ -5,6 +5,6 @@ module PatientsHelper
       ["French", "French"],
       ["Spanish", "Spanish"]
     ]
-end
+  end
 
 end

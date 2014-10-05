@@ -1,0 +1,9 @@
+<%= simple_form_for(@syndrome, html: {class: 'form-vertical'}) do |f| %>
+  <%= f.input :name, label: 'Syndrome Name', placeholder: 'Syndrome Name' %>
+  <%= f.input :image, :label => 'Image' %>
+  <%= f.input :description, label: 'Description', placeholder: 'Description of of Syndrome' %>
+  <%= f.input :text_code, label: 'Text Code', placeholder: 'XXXX' %> 
+  <%= f.input :severity_score, collection: 1..7 %>
+  <%= f.input :health_instruction, label: "Health Instructions" %>
+  <%= f.button :submit %>
+<% end %>
