@@ -2,6 +2,7 @@
 <table class="table table-bordered" id="Case_Table">		
 	<thead>
 		<tr class="active" style="background-color: #CDFFE6">
+			<td style="font-size: 14px"><strong>Case ID </strong></td>
 			<td style="font-size: 14px"><strong>Status</strong></td>
 			<td style="font-size: 14px"><strong>Issue Date</strong></td>
 			<td style="font-size: 14px"><strong>Patient</strong></td>
@@ -16,6 +17,8 @@
 	
 	<tbody>
 		<tr>
+			<% link = event.id %>
+			<td><%= link_to event.id, case_path(link)%></td>
 			<td><%= event.status %></td> 
 			<td><%= event.created_at %></td>
 			<td><%= event.patient.first_name %></td> 

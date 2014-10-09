@@ -1,76 +1,53 @@
-<h3>Case Inspection</h3>
-<div class="container">
-    <div class="panel panel-info">
-        <div class="panel-heading">
-            <h3 class="panel-title"><%= @case.patient.first_name%> <%= @case.patient.last_name%></h3>
+<h2><em>Case Id <%=@case.id %></em></h2>
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @case.patient.first_name%> <%= @case.patient.last_name%></h3> 
+  </div>
+
+   <div class="panel-body">
+        <div> 
+          <img alt="User Pic" src="http://i.imgur.com/K7Um3.png" class="img-circle">
         </div>
+
+        <br>
         
-        <div class="panel-body">
-            <div class="row">
-              <div class="col-md-9 col-lg-5 " align="center"> <img alt="User Pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=100" class="img-circle"> </div>
-                
-                <!--<div class="col-xs-10 col-sm-10 hidden-md hidden-lg"> <br>
-                  <dl>
-                    <dt>DEPARTMENT:</dt>
-                    <dd>Administrator</dd>
-                    <dt>HIRE DATE</dt>
-                    <dd>11/12/2013</dd>
-                    <dt>DATE OF BIRTH</dt>
-                       <dd>11/12/2013</dd>
-                    <dt>GENDER</dt>
-                    <dd>Male</dd>
-                  </dl>
-                </div>-->
-                <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>Department:</td>
-                        <td>Programming</td>
-                      </tr>
-                      <tr>
-                        <td>Hire date:</td>
-                        <td>06/23/2013</td>
-                      </tr>
-                      <tr>
-                        <td>Date of Birth</td>
-                        <td>01/24/1988</td>
-                      </tr>
-                   
-                         <tr>
-                             <tr>
-                        <td>Gender</td>
-                        <td>Male</td>
-                      </tr>
-                        <tr>
-                        <td>Home Address</td>
-                        <td>Metro Manila,Philippines</td>
-                      </tr>
-                      <tr>
-                        <td>Email</td>
-                        <td><a href="mailto:info@support.com">info@support.com</a></td>
-                      </tr>
-                        <td>Phone Number</td>
-                        <td>123-4567-890(Landline)<br><br>555-4567-890(Mobile)
-                        </td>
-                           
-                      </tr>
-                     
-                    </tbody>
-                  </table>
-                  
-                  <a href="#" class="btn btn-primary">My Sales Performance</a>
-                  <a href="#" class="btn btn-primary">Team Sales Performance</a>
-                </div>
-              </div>
-            </div>
-                 <div class="panel-footer">
-                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                        <span class="pull-right">
-                            <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-                        </span>
-                    </div>
-        </div>
-      </div>
-    </div>
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                  <td style="font-size: 14px"><strong>Household</strong></td>
+                  <td style="font-size: 14px"><%=@case.patient.household.name%></td>
+                </tr>
+
+                <tr>
+                  <td style="font-size: 14px"><strong>Time Reported</strong></td>
+                  <td style="font-size: 14px"><%=@case.created_at.in_time_zone("Pacific Time (US & Canada)")%></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px"><strong>Reported Health Events</strong></td>
+                  <% link = @case.syndrome_ids %>
+                  <td style="font-size: 14px"><%= @case.syndromes.map{|wl| link_to wl.name, syndrome_path(link)}.join(', ').html_safe %></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px"><strong>Sent Images</strong></td>
+                  <td><img alt="Diarrhea" src="http://www.clearfection.com/wp-content/uploads/2013/06/Diarrhea-150x150.jpg" class="img-rounded"> 
+                    <img alt="Fever" src="http://longevitywellnessclinic.com/wp-content/uploads/2014/05/gbhead-e1401383447243-150x150.jpg" class="img-rounded">
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="font-size: 14px"><strong>Location</strong></td>
+                  <td style="font-size: 14px"><em>Geographic Location<em></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px"><strong>Contact Info</strong></td>
+                  <td style="font-size: 14px"><%= @case.sender %></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px"><strong>Urgency Level</strong></td>
+                  <td style= "font-size: 14px"><%= @case.urgency_level %></td>
+                </tr>
+                <tr>
+                  <td style="font-size: 14px"><strong>Notes</strong></td>
+                  <td style="font-size: 12px"><%= @case.notes %></td>
+                </tr>    
+            </tbody>
+      </table>
