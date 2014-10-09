@@ -14,5 +14,7 @@
 class Case < ActiveRecord::Base
 	belongs_to :patient
 	belongs_to :clinician
-	has_and_belongs_to_many :syndromes
+  
+	has_many :case_syndromes
+  has_many :syndromes, :through => :case_syndromes 
 end

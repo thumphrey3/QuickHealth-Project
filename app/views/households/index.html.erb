@@ -1,9 +1,10 @@
-<h3><%= link_to "+ Register New Household", new_household_path %></h3>
-
+<h2>Households</h2>
 <%= form_tag households_path, method: "GET" do %>
-  <%= text_field_tag :search, params[:search] %>
-  <%= submit_tag "Search" %>
+  		<%= text_field_tag :search, params[:search] %>
+  		<%= submit_tag "Search" %>
 <% end %>
- 
 
 <%= render 'householdtable' %>
+
+<%= button_to "Add Household", new_household_path, :id => 'household', :class=> "btn btn-primary", :method => :get %>
+  

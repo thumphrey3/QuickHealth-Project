@@ -14,5 +14,6 @@
 #
 
 class Syndrome < ActiveRecord::Base
-	has_and_belongs_to_many :cases
+	has_many :case_syndromes
+  has_many :cases, :through => :case_syndromes
 end

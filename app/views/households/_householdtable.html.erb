@@ -1,10 +1,9 @@
 <h3>Household List</h3>
-<table class="table table-striped" id="Household_Table">		
+<table class="table table-bordered" id="Household_Table">		
 	<thead>
-		<tr>
+		<tr style="background-color: #CDFFE6">
 			<td style="font-size: 20px"><strong>Name</strong></td>
 			<td style="font-size: 20px"><strong>Mobile Number</strong></td>
-			<td style="font-size: 20px"><strong>Email Address</strong></td>
 			<td style="font-size: 20px"><strong>Household Members</strong></td>
 			<td style="font-size: 20px"><strong>Language</strong></td>
 		</tr>
@@ -16,7 +15,6 @@
 		<tr>
 			<td><%= household.name %></td> 
 			<td><%= household.mobile_number %></td>
-			<td><%= household.email %></td> 
 			<% link = household.patient_ids %>
 			<td><%= household.patients.map{|wl| link_to wl.first_name, patient_path(link)}.join(', ').html_safe %></td>
 			<td> <%= household.patients.first.language.capitalize%> </td> 
@@ -24,3 +22,5 @@
 	<% end %>
 	</tbody>
 </table> 
+
+

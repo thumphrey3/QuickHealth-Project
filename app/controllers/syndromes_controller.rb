@@ -2,6 +2,7 @@ class SyndromesController < ApplicationController
   before_action :set_syndrome, only: [:update, :edit, :show]
 
   def index
+    @syndromes = Syndrome.all
   end
 
   def show
@@ -37,6 +38,6 @@ class SyndromesController < ApplicationController
   end
 
   def syndrome_params
-    params.require(:syndrome).permit(:name, :description, :text_code, :severity_score, :instruction)
+    params.require(:syndrome).permit(:name, :description, :text_code, :severity_score, :health_instruction)
   end
 end

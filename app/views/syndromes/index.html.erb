@@ -1,5 +1,5 @@
-<h1>Tracked Syndromes List</h1>
-
-<h3><%= link_to "+Create New Syndrome", new_syndrome_path %></h3>
+<h2>Tracked Syndromes List</h2>
 
 <%= render 'table_syndrome' %>
+
+<%= button_to "Create New Syndrome", new_syndrome_path, :id => 'syndrome', :class=> "btn btn-primary", :method => :get %>

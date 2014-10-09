@@ -1,6 +1,4 @@
-<h1>Quick Health Advisor Homepage</h1>
-
-<h3><%= link_to "+ Register New Patient", new_patient_path %></h3>
+<h2>Patients</h2>
 
 <%= form_tag patients_path, method: "GET" do %>
   <%= text_field_tag :q, params[:q] %>
@@ -8,3 +6,5 @@
 <% end %>
 
 <%= render 'patienttable' %>
+
+<%= button_to "Register Patient", new_patient_path, :id => 'patient', :class=> "btn btn-primary", :method => :get %>
