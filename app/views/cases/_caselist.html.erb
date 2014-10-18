@@ -26,8 +26,8 @@
 			<td><%= event.patient.household.name %></td>
 			<% link = event.syndrome_ids %>
 			<td><%= event.syndromes.map{|wl| link_to wl.name, syndrome_path(link)}.join(', ').html_safe %></td>
-			<td><% event.urgency_level %></td>
-			<td><% event.appointment %></td>
+			<td><%= event.urgency_level %></td>
+			<td><%= event.appointment %></td>
 			<td><%= event.sender %></td> 
 		</tr>
 	<% end %>
