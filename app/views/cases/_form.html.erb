@@ -1,0 +1,7 @@
+<%= simple_form_for(@case, html: {class: 'form-vertical'}) do |f| %>
+  <%= f.input :status, collection: status_list  %>
+  <%= f.input :notes %>
+  <%= f.input :appointment %> 
+  <%= f.button :submit %>
+<% end %>
+

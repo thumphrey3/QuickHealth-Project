@@ -9,6 +9,7 @@
 			<td style="font-size: 14px"><strong>Household</strong></td>
 			<td style="font-size: 14px"><strong>Syndromes List</strong></td>
 			<td style="font-size: 14px"><strong>Urgency</strong></td>
+			<td style="font-size: 14px"><strong>Appointment</strong></td>
 			<td style="font-size: 14px"><strong>Contact Info</strong></td>
 		</tr>
 	</thead>
@@ -26,6 +27,7 @@
 			<% link = event.syndrome_ids %>
 			<td><%= event.syndromes.map{|wl| link_to wl.name, syndrome_path(link)}.join(', ').html_safe %></td>
 			<td><% event.urgency_level %></td>
+			<td><% event.appointment %></td>
 			<td><%= event.sender %></td> 
 		</tr>
 	<% end %>

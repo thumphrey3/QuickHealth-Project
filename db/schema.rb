@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007051212) do
+ActiveRecord::Schema.define(version: 20141018042237) do
 
   create_table "case_syndromes", force: true do |t|
     t.integer  "case_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20141007051212) do
     t.integer  "patient_id"
     t.integer  "syndrome_id"
     t.string   "sender"
+    t.datetime "appointment"
   end
 
   add_index "cases", ["patient_id"], name: "index_cases_on_patient_id"
