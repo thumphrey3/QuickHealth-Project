@@ -23,6 +23,7 @@ $(document).ready(function() {
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
+    	 events: '/cases.json'
         // put your options and callbacks here
     })
 
